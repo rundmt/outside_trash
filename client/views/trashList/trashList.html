@@ -5,11 +5,16 @@
     {{#ionView}}
       {{#ionContent}}
       <div class="list">
+        {{#each trashcans}}
+
+
         <a class="item item-image artist-listpic" href="#">
-          <img class src="http://lorempixel.com/400/200/sports/Dummy-Text/">
-          <h1 class="artist-listname">Nine Inch Nails</h1>
+          <img class src="{{picture.url}}">
+          <h1 class="artist-listname">{{name}}</h1>
         </a>
+        {{/each}}
       </div>
+
       {{/ionContent}}
     {{/ionView}}
 

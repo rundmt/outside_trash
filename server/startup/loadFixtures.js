@@ -8,5 +8,6 @@ function loadFixture(fixtures, collection) {
 }
 
 Meteor.startup(function () {
+  trashcans._ensureIndex({'loc.coordinates':'2dsphere'});
   //loadFixture(Fixtures['dummyFixture'], DummyCollection);
 });
