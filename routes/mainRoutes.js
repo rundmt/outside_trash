@@ -6,3 +6,8 @@ Router.route('/', {
     SEO.set({ title: 'Home - ' + Meteor.App.NAME });
   }
 });
+
+Router.onBeforeAction(function() {
+  GoogleMaps.load();
+  this.next();
+}, { only: ['home'] });
