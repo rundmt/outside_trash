@@ -1,21 +1,16 @@
 <template name="trashList">
-  {{#contentFor "headerTitle"}}
-    <h1 class="title">Artist</h1>
-  {{/contentFor}}
-    {{#ionView}}
-      {{#ionContent}}
+
       <div class="list">
+        <div class="item trash-info">
+        <h2 class="trash-info-text">Tap artist's trashcan when full.</h2>
+      </div>
+
         {{#each trashcans}}
-
-
         <a class="item item-image artist-listpic" href="#">
           <img class src="{{picture.url}}">
           <h1 class="artist-listname">{{name}}</h1>
         </a>
         {{/each}}
       </div>
-
-      {{/ionContent}}
-    {{/ionView}}
 
 </template>

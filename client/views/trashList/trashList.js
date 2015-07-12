@@ -6,5 +6,7 @@ Template['trashList'].helpers({
 });
 
 Template['trashList'].events({
-
+  'click .artist-listpic': function(){
+         return trashcans.update(this._id, {$set: {full: true}});
+    }
 });

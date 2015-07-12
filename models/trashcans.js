@@ -21,6 +21,9 @@ trashcans.attachSchema(
     },
     "picture.url": {
       type: String
+    },
+    full: {
+      type: Boolean 
     }
   })
 );

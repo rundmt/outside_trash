@@ -4,6 +4,7 @@ Template.home.helpers({
   },
   exampleMapOptions: function() {
    // Make sure the maps API has loaded
+
    if (GoogleMaps.loaded()) {
      // Map initialization options
      return {
@@ -18,6 +19,7 @@ Template.home.helpers({
 });
 
 Template.home.events({
+
 });
 
 
@@ -26,6 +28,7 @@ Template.home.rendered = function () {
  GoogleMaps.ready('exampleMap', function(map) {
    // Add a marker to the map once it's ready
    var trashcans = map.options.trashcans();
+
    for (var i in trashcans) {
       var coords = new google.maps.LatLng(trashcans[i].loc.coordinates[1], trashcans[i].loc.coordinates[0])
       var garbageBin = new google.maps.Marker({
@@ -33,6 +36,12 @@ Template.home.rendered = function () {
         map: map.instance
       });
    }
+
+     var infowindow = new google.maps.Marker({
+        map: map.instance,
+        position: new google.maps.LatLng(Geolocation.latLng().lat, Geolocation.latLng().lng),
+        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+      });
 
  });
 };

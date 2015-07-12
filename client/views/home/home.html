@@ -1,12 +1,14 @@
 <template name="home">
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Location</h1>
+    <h1 class="title">Outside Trash</h1>
   {{/contentFor}}
+
   {{#ionView}}
     {{#ionContent}}
     <div class="map-container">
      {{> googleMap name="exampleMap" options=exampleMapOptions}}
     </div>
+    {{> trashList}}
     {{/ionContent}}
   {{/ionView}}
 </template>

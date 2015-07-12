@@ -25,5 +25,5 @@ fourseven:scss@2.0.0
 meteoric:ionicons-sass
 dburles:google-maps
 mdg:geolocation
-mdg:camera
 meteoric:ionic-sass
+mdg:camera

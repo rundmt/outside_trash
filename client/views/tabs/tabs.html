@@ -2,15 +2,12 @@
   {{#if isAndroid}}
   {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
     {{> ionTab title="Nearby" path="home" icon="ios-location"}}
-    {{> ionTab title="Camera" path="se" iconOff="ios-camera" iconOn="ios-camera-outline"}}
     {{> ionTab title="Trashcan" path="trashList" iconOff="trash-a" iconOn="trash-b"}}
-
   {{/ionTabs}}
   {{else}}
   {{#ionTabs style="ios"}}
     {{> ionTab title="Nearby" path="home" iconOff="ios-location-outline" iconOn="ios-location"}}
-    {{> ionTab title="Camera" path="search" iconOff="ios-camera" iconOn="ios-camera-outline"}}
-    {{> ionTab title="Trashcan" path="trashlist" iconOff="trash-a" iconOn="trash-b"}}
+    {{> ionTab title="Alert Full Trash Can" path="trashlist" iconOff="alert-circled" iconOn="alert-circled"}}
   {{/ionTabs}}
   {{/if}}
 </template>
