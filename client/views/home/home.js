@@ -1,11 +1,19 @@
+Meteor.subscribe("trashcans");
+
 Template.home.helpers({
+  trashcans: function(){
+    return trashcans.find().fetch();
+  },
   exampleMapOptions: function() {
    // Make sure the maps API has loaded
    if (GoogleMaps.loaded()) {
      // Map initialization options
      return {
-       center: new google.maps.LatLng(37.7694235,-122.475832),
-       zoom: 18
+       center: new google.maps.LatLng(37.769105, -122.488583),
+       zoom: 18,
+       trashcans: function(){
+         return trashcans.find().fetch();
+       }
      };
    }
  }
@@ -23,5 +31,14 @@ Template.home.rendered = function () {
      position: map.options.center,
      map: map.instance
    });
+   var trashcans = map.options.trashcans();
+   for (var i in trashcans) {
+      var coords = new google.maps.LatLng(trashcans[i].loc.coordinates[1], trashcans[i].loc.coordinates[0])
+      var garbageBin = new google.maps.Marker({
+        position: coords,
+        map: map.instance
+      });
+   }
+
  });
 };

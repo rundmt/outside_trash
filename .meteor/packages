@@ -22,6 +22,8 @@ meteorhacks:fast-render
 
 meteoric:ionic
 fourseven:scss@2.0.0
-meteoric:ionic-sass
 meteoric:ionicons-sass
 dburles:google-maps
+mdg:geolocation
+mdg:camera
+meteoric:ionic-sass
