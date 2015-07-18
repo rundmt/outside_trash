@@ -7,6 +7,13 @@ Template['trashList'].helpers({
 
 Template['trashList'].events({
   'click .artist-listpic': function(){
-         return trashcans.update(this._id, {$set: {full: true}});
+  		var r = confirm("Are you sure this trashcan is full?");
+		if (r == true) {
+		    return trashcans.update(this._id, {$set: {full: true}});
+		}  else {
+      console.log("false")
+			return trashcans.update(this._id, {$set: {full: false}});
+		}       
     }
 });
+
